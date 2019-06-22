@@ -4,5 +4,15 @@ module.exports = function(app) {
         console.log('recebida requisicao de teste na porta 3000');
         res.send('OK');
     });
+
+    app.post('/pagamentos/pagamento', function(req, res) {
+        var pagamento = req.body;
+        console.log(pagamento);
+        pagamento.status = 'Criado';
+        pagamento.data = new Date();
+        res.send(pagamento)
+    });
 }
+
+
 
